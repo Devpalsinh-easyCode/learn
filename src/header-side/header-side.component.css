@@ -1,0 +1,168 @@
+/* General styling for the navbar */
+.navbar {
+  padding: 0.8rem 1.5rem; /* Consistent padding */
+}
+
+/* Side Menu Styling */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #f8f9fa;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.side-menu.open {
+  transform: translateX(0);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1050;
+}
+
+.menu-overlay.show {
+  display: block;
+}
+
+/* Navbar in Mobile view */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #fff;
+  }
+
+  .navbar-toggler {
+    z-index: 1051;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .nav-item {
+    padding: 10px 20px;
+  }
+
+  .navbar-brand {
+    margin-left: 0;
+  }
+
+  /* .content { */
+    /* margin-top: 5rem; */
+  /* } */
+}
+
+/* Desktop Specific Adjustments */
+@media (min-width: 992px) {
+  .side-menu {
+    display: block;
+    transform: translateX(0); /* Ensure side menu is shown on larger screens */
+  }
+
+  .menu-overlay {
+    display: none; /* Hide overlay on desktop */
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+}
+
+/* Desktop Menu Item Hover Animation */
+.navbar-nav .nav-item .nav-link {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link.animate-hover::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  /* background-color: var(--bs-primary); */
+  left: 0;
+  bottom: -2px;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link.animate-hover:hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-item .nav-link.animate-hover:hover {
+  color: var(--bs-primary);
+}
+
+/* Smooth Menu Collapse Animation */
+.collapse.animate__animated {
+  animation-duration: 0.4s;
+}
+
+#navbarsExample11.animate__fadeIn {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base style for the nav-link */
+.navbar-nav .nav-item .nav-link {
+  position: relative;  /* Required for absolute positioning of the underline */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active link styles */
+.navbar-nav .nav-item .nav-link.active {
+  color: #0d6efd; /* Bootstrap Primary color */
+  /* font-weight: bold; */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Creative animation: underline animation */
+.navbar-nav .nav-item .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0d6efd; /* Primary color */
+  /* transform: scaleX(0);
+  transition: transform 0.4s ease-in-out; */
+}
+
+/* Apply the underline animation when active */
+.navbar-nav .nav-item .nav-link.active:hover::after,
+.navbar-nav .nav-item .nav-link.active {
+  transform: scaleX(1);
+}
+
+/* Hover animation for nav link */
+.navbar-nav .nav-item .nav-link:hover {
+  color: #0a58ca; /* Darker color when hovered */
+  transform: translateY(-3px); /* Slight movement upwards */
+}
+
+/* Smooth transition for hover effect */
+.navbar-nav .nav-item .nav-link.active:hover {
+  color: #0a58ca; /* Darker color on hover for active link */
+  transform: translateY(-3px) scale(1.1); /* Slightly larger and lifted on hover */
+}

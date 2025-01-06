@@ -1,0 +1,102 @@
+<div class="navbar-side-menu">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary shadow-sm sticky-top">
+    <div class="container-fluid">
+      <!-- Brand with Avatar -->
+      <a
+        class="navbar-brand fw-normal text-primary d-flex align-items-center"
+        href="https://www.linkedin.com/in/devpalsinh-chauhan-601365143/" target="_blank">
+        <img
+          src="devpal_img.png"
+          alt="Devpalsinh Chauhan"
+          class="rounded-circle me-2"
+          style="width: 40px; height: 40px;"
+        />
+        Devpalsinh Chauhan
+      </a>
+      <!-- Navbar Toggler -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarsExample11"
+        aria-controls="navbarsExample11"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar Content -->
+      <div class="collapse navbar-collapse animate__animated animate__fadeIn" id="navbarsExample11">
+        <!-- Navigation Links -->
+        <ul class="navbar-nav mx-auto desktop-menu">
+          <li class="nav-item">
+            <a
+              class="nav-link text-secondary animate-hover"
+              routerLink="/home"
+              routerLinkActive="active text-primary"
+              [ngClass]="{'active-link': isActive('/home')}"
+              (click)="closeMobileMenu()"
+            >
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-secondary animate-hover"
+              routerLink="/projects"
+              routerLinkActive="active text-primary"
+              [ngClass]="{'active-link': isActive('/projects')}"
+              (click)="closeMobileMenu()"
+            >
+              Projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-secondary animate-hover"
+              routerLink="/contact"
+              routerLinkActive="active text-primary"
+              [ngClass]="{'active-link': isActive('/contact')}"
+              (click)="closeMobileMenu()"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+        <!-- Resume Download Button -->
+        <div class="d-flex d-none d-md-block">
+          <a
+            href="devpalsinh_resume.pdf"
+            download="Devpalsinh_Chauhan_Resume.pdf"
+            class="btn btn-outline-primary btn-sm shadow-sm"
+            style="font-size: 0.8rem; padding: 0.4rem 0.8rem;"
+          >
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content Section -->
+  <div class="content py-4 animate__animated animate__fadeIn">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<footer class="bg-light py-4 mt-5">
+  <div class="container text-center">
+    <!-- Social Media Links -->
+    <div class="mb-3">
+      <a href="https://www.linkedin.com/in/devpalsinh-chauhan-601365143/" target="_blank" class="text-primary mx-2">
+        <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+      </a>
+      <a href="mailto:devpalsinh@gmail.com" class="text-danger mx-2">
+        <i class="bi bi-envelope" style="font-size: 1.5rem;"></i>
+      </a>
+    </div>
+    <!-- Footer Text -->
+    <p class="text-secondary mb-1">&copy; 2025 Devpalsinh Chauhan. All Rights Reserved.</p>
+  </div>
+</footer>
